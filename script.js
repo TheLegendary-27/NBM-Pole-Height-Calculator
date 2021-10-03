@@ -77,17 +77,47 @@ function getTripodHt() {
 }
 
 function printHeight() {
-    let input = form.value;
-    const li = document.createElement('li');
+    let input = parseFloat(form.value);
+    let li = document.createElement('li');
 
     htList.appendChild(li);
-    li.textContent = input;
+    li.textContent = input.toFixed(2);
 
-    let realHt = tripodHt + input;
+    let realHt = parseFloat(tripodHt) + input;
+
+    console.log(realHt);
+
+    let roundHt = (height) => {
+        if(((height * 100) % 5 < 3) && (height * 100) % 5 !== 0) {
+            //Separate 1,2 & 6, 7
+            if((height * 10) - Math.floor(height * 10) < 0.5) {
+                return (Math.floor(height * 10) / 10).toFixed(2);
+            } else {
+                return ((Math.ceil(height * 10) / 10) - 0.05).toFixed(2);
+            }
+        } else if((height * 100) % 5 === 0) {
+            if((height * 10) - Math.floor(height * 10) === 0){
+                return (Math.floor(height * 10) / 10).toFixed(2);
+            } else {
+                return ((Math.ceil(height * 10) / 10) - 0.05).toFixed(2);
+            }
+        } else {
+            if((height * 10) - Math.floor(height * 10) < 0.5) {
+                return ((Math.ceil(height * 10) / 10) - 0.05).toFixed(2);
+            } else {
+                return (Math.ceil(height * 10) / 10).toFixed(2);
+            }
+        }
+    }
+
+    let roundedHt = roundHt(realHt);
     let span = document.createElement('span');
     span.style.color = "red";
     li.appendChild(span);
-    span.textContent = ` (${realHt})`;
+    span.textContent = ` (${roundedHt})`;
+
+    form.value = '';
+    form.focus();
 }
 
 
