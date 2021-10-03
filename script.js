@@ -30,7 +30,11 @@ createHeader();
 const tripodHt = getTripodHt();
 console.log(tripodHt);
 
-//Create a button
+//Create a list of the heights
+const submitBtn = document.getElementById('submit-btn');
+const form = document.getElementById('height-input');
+
+submitBtn.addEventListener('click', printHeight);
 
 
 function createHeader() {
@@ -72,5 +76,18 @@ function getTripodHt() {
     }
 }
 
+function printHeight() {
+    let input = form.value;
+    const li = document.createElement('li');
+
+    htList.appendChild(li);
+    li.textContent = input;
+
+    let realHt = tripodHt + input;
+    let span = document.createElement('span');
+    span.style.color = "red";
+    li.appendChild(span);
+    span.textContent = ` (${realHt})`;
+}
 
 
