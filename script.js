@@ -30,13 +30,13 @@ createHeader();
 const tripodHt = getTripodHt();
 console.log(tripodHt);
 
+//Create a button
 
 
 function createHeader() {
-    const h1 = document.createElement('h1');
+    const h1 = document.getElementsByTagName('h1');
     let header = `${refNum} (${poleID})`;
-    body.appendChild(h1);
-    h1.textContent = header;
+    h1[0].textContent = header;
 }
 
 function getTripodHt() {
