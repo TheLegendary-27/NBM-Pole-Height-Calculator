@@ -2,6 +2,10 @@
 
 }
 
-#heights {
-    
+#height-input {
+    width: 100px;
+}
+
+body {
+    font-size: 20px;
 }
