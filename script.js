@@ -97,18 +97,14 @@ function printHeight() {
             }
         } else if((height * 1000) % 5 === 0) {
             if((height * 10) - Math.floor(height * 10) === 0){
-                console.log('I ran')
                 return (Math.floor(height * 10) / 10).toFixed(2);
             } else {
-                console.log('I ran');
                 return ((Math.ceil(height * 10) / 10) - 0.05).toFixed(2);
             }
         } else {
             if((height * 10) - Math.floor(height * 10) < 0.5) {
-                console.log('I ran');
                 return ((Math.ceil(height * 10) / 10) - 0.05).toFixed(2);
             } else {
-                console.log('I ran');
                 return (Math.ceil(height * 10) / 10).toFixed(2);
             }
         }
