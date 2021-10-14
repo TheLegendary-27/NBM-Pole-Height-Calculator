@@ -83,7 +83,7 @@ function printHeight() {
     htList.appendChild(li);
     li.textContent = input.toFixed(2);
 
-    let realHt = parseFloat(tripodHt) + input;
+    let realHt = (parseFloat(tripodHt) + input) * 10 / 10;
 
     console.log(realHt);
 
@@ -97,14 +97,18 @@ function printHeight() {
             }
         } else if((height * 1000 / 10) % 5 === 0) {
             if((height * 1000 / 100) - Math.floor(height * 10) === 0){
+                console.warn('culprit');
                 return (Math.floor(height * 10) / 10).toFixed(2);
             } else {
+                console.warn('culprit');
                 return ((Math.ceil(height * 10) / 10) - 0.05).toFixed(2);
             }
         } else {
             if((height * 1000 / 100) - Math.floor(height * 10) < 0.5) {
+                console.warn('culprit');
                 return ((Math.ceil(height * 10) / 10) - 0.05).toFixed(2);
             } else {
+                console.warn('culprit');
                 return (Math.ceil(height * 10) / 10).toFixed(2);
             }
         }
