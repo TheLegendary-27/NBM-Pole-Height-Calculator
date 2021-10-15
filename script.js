@@ -83,7 +83,7 @@ function printHeight() {
     htList.appendChild(li);
     li.textContent = input.toFixed(2);
 
-    let realHt = ((parseFloat(tripodHt) + input)).toFixed(2) * 10 / 10;
+    let realHt = Number(((parseFloat(tripodHt) + input)).toFixed(2));
 
     console.log(realHt);
 
