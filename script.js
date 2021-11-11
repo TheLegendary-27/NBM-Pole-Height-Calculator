@@ -28,7 +28,7 @@ const htList = document.getElementById('heights');
 createHeader();
 
 const tripodHt = getTripodHt();
-console.log(`%c(${tripodHt})`, 'color: red; font-size: 18px;');
+console.log(`%c-(${tripodHt})`, 'color: red; font-size: 18px;');
 
 //Create a list of the heights
 const submitBtn = document.getElementById('submit-btn');
@@ -113,6 +113,7 @@ function printHeight() {
     let roundedHt = roundHt(realHt);
     let span = document.createElement('span');
     span.style.color = "red";
+    span.classList.add('real-height');
     li.appendChild(span);
     span.textContent = ` (${roundedHt})`;
 

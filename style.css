@@ -1,11 +1,19 @@
 * {
-
 }
 
 #height-input {
-    width: 100px;
+  width: 100px;
+}
+
+.real-height {
+  position: absolute;
+  left: 125px;
 }
 
 body {
-    font-size: 20px;
+  font-size: 20px;
+}
+
+li {
+  margin-bottom: 3px;
 }
